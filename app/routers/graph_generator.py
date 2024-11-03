@@ -24,6 +24,10 @@ async def process_documents(prefix: str = ""):
         documents = [Document(page_content=doc["content"]) for doc in raw_documents]
 
         for doc, raw_doc in zip(documents, raw_documents):
+            # Print the document content
+            # print(f"Converting document to graph: {raw_doc['key']}")
+            # print(f"Content: {doc.page_content}")
+
             # Transform document into graph document
             graph_document = transform_documents_to_graph([doc])
 
